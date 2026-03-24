@@ -2,11 +2,11 @@ import { useEffect, useRef, useState, useCallback } from 'react'
 import './TeamGallery.css'
 
 const images = [
-  { src: '/meet.jpg',  alt: 'Highshine Team' },
-  { src: '/meet1.jpg', alt: 'Team Gathering' },
-  { src: '/meet.jpg',  alt: 'Office Moments' },
-  { src: '/meet1.jpg', alt: 'Team Activity' },
-  { src: '/meet.jpg',  alt: 'Highshine Family' },
+  { src: '/highshine/meet.jpg',  alt: 'Highshine Team' },
+  { src: '/highshine/meet1.jpg', alt: 'Team Gathering' },
+  { src: '/highshine/meet.jpg',  alt: 'Office Moments' },
+  { src: '/highshine/meet1.jpg', alt: 'Team Activity' },
+  { src: '/highshine/meet.jpg',  alt: 'Highshine Family' },
 ]
 
 const INTERVAL = 3000

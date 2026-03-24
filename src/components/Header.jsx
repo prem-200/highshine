@@ -13,21 +13,22 @@ const navItems = [
 
 export default function Header() {
   const [active, setActive] = useState('Home')
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <header className="header">
       <div className="header-inner">
         <a className="logo" href="#">
-          <img src="/Highshine-logo-2.svg" alt="Highshine" className="logo-img" />
+          <img src="/highshine/Highshine-logo-2.svg" alt="Highshine" className="logo-img" />
         </a>
 
-        <nav className="nav">
+        <nav className={`nav${menuOpen ? ' nav--open' : ''}`}>
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
               className={`nav-link${active === item.label ? ' active' : ''}`}
-              onClick={(e) => { e.preventDefault(); setActive(item.label) }}
+              onClick={(e) => { e.preventDefault(); setActive(item.label); setMenuOpen(false) }}
             >
               {item.label}
               {item.dropdown && (
@@ -39,7 +40,13 @@ export default function Header() {
           ))}
         </nav>
 
-        <button className="contact-btn"><span>Contact Us</span></button>
+        <button className="contact-btn desktop-only"><span>Contact Us</span></button>
+
+        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+          <span className={`ham-line${menuOpen ? ' open' : ''}`} />
+          <span className={`ham-line${menuOpen ? ' open' : ''}`} />
+          <span className={`ham-line${menuOpen ? ' open' : ''}`} />
+        </button>
       </div>
     </header>
   )

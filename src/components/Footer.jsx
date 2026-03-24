@@ -30,7 +30,7 @@ export default function Footer() {
 
           {/* Brand col */}
           <div className="footer-brand">
-            <img src="/Highshine-logo-2.svg" alt="Highshine" className="footer-logo" />
+            <img src="/highshine/Highshine-logo-2.svg" alt="Highshine" className="footer-logo" />
             <p className="footer-tagline">
               Your lifelong ERP partner — delivering transformation that lasts beyond go-live.
             </p>

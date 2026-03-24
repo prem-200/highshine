@@ -38,7 +38,7 @@ export default function LeadershipCulture() {
         {/* ── Left: Team Photo ── */}
         <div className="lc-left">
           <div className="lc-photo-frame">
-            <img src="/meet.jpg" alt="Highshine Team" className="lc-photo" />
+            <img src="/highshine/meet.jpg" alt="Highshine Team" className="lc-photo" />
             <div className="lc-photo-overlay" />
             <div className="lc-photo-badge">
               <span className="lc-badge-dot" />

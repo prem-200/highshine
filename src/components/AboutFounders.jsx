@@ -26,7 +26,7 @@ export default function AboutFounders() {
           <div className="founders-portraits">
 
             <div className="founders-portrait founders-portrait--1">
-              <img src="/owner.jpg" alt="Hari Gautham" />
+              <img src="/highshine/owner.jpg" alt="Hari Gautham" />
               <div className="founders-portrait-overlay" />
               <div className="founders-portrait-info">
                 <span className="founders-portrait-role">Founder & CEO</span>
@@ -36,7 +36,7 @@ export default function AboutFounders() {
             </div>
 
             <div className="founders-portrait founders-portrait--2">
-              <img src="/owner2.jpg" alt="Surendar" />
+              <img src="/highshine/owner2.jpg" alt="Surendar" />
               <div className="founders-portrait-overlay" />
               <div className="founders-portrait-info">
                 <span className="founders-portrait-role">Co-Founder & CTO</span>

@@ -200,3 +200,22 @@
   width: 26px;
   border-radius: 4px;
 }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .tg-section { padding: 60px 0 70px; }
+  .tg-title { font-size: 28px; }
+  .tg-stage { height: 360px; }
+  .tg-card.pos-center { width: 220px; height: 300px; margin-top: -150px; margin-left: -110px; }
+  .tg-card.pos-left { width: 170px; height: 260px; margin-top: -130px; margin-left: -300px; }
+  .tg-card.pos-right { width: 170px; height: 260px; margin-top: -130px; margin-left: 130px; }
+  .tg-card.pos-far-left, .tg-card.pos-far-right { display: none; }
+  .tg-arrow--prev { left: 12px; }
+  .tg-arrow--next { right: 12px; }
+}
+
+@media (max-width: 480px) {
+  .tg-stage { height: 300px; }
+  .tg-card.pos-center { width: 180px; height: 250px; margin-top: -125px; margin-left: -90px; }
+  .tg-card.pos-left, .tg-card.pos-right { display: none; }
+}

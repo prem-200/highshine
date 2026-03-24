@@ -259,3 +259,22 @@
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.07);
 }
+
+/* ── Mobile ── */
+@media (max-width: 900px) {
+  .journey-section { padding: 80px 0 100px; }
+  .journey-header { padding: 0 24px; margin-bottom: 60px; }
+  .journey-title { font-size: 38px; letter-spacing: -1px; }
+  .journey-track-wrap { padding: 0 24px; }
+  .journey-line-bg, .journey-line-fill { display: none; }
+  .journey-milestones {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-title { font-size: 30px; }
+  .journey-milestones { grid-template-columns: 1fr; }
+  .journey-year { font-size: 32px; }
+}
