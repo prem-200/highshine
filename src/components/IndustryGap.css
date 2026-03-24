@@ -1,0 +1,310 @@
+/* ── Section ── */
+.gap-section {
+  background: #ffffff;
+  padding: 110px 0 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* decorative blobs */
+.gap-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+.gap-blob-1 {
+  width: 500px; height: 500px;
+  background: rgba(124, 92, 191, 0.07);
+  top: -100px; left: -100px;
+}
+.gap-blob-2 {
+  width: 400px; height: 400px;
+  background: rgba(201, 162, 39, 0.06);
+  bottom: -80px; right: 5%;
+}
+
+.gap-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Scroll animations ── */
+.gap-left {
+  opacity: 0;
+  transform: translateX(-52px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.gap-right {
+  opacity: 0;
+  transform: translateX(52px);
+  transition: opacity 0.75s ease 0.18s, transform 0.75s ease 0.18s;
+}
+.gap-section.visible .gap-left,
+.gap-section.visible .gap-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* stagger pills */
+.gap-pill {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease, background 0.25s, border-color 0.25s;
+}
+.gap-section.visible .gap-pill {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Label ── */
+.gap-label-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.gap-label-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c5cbf, #c9a227);
+  flex-shrink: 0;
+}
+.gap-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #a78bfa, #c9a227);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Title ── */
+.gap-title {
+  font-size: 52px;
+  font-weight: 800;
+  color: #0d0b1e;
+  margin: 0 0 28px;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+.gap-title-accent {
+  background: linear-gradient(90deg, #a78bfa, #c9a227);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Body text ── */
+.gap-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4b4b6b;
+  margin: 0 0 16px;
+  max-width: 500px;
+}
+
+/* ── Pills ── */
+.gap-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 32px;
+}
+.gap-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(124,92,191,0.25);
+  background: rgba(124,92,191,0.06);
+  color: #3d2f6b;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: default;
+}
+.gap-pill:hover {
+  background: rgba(124,92,191,0.14);
+  border-color: rgba(124,92,191,0.5);
+  color: #5b3fa0;
+}
+.gap-pill-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* ── Quote ── */
+.gap-quote {
+  margin: 0;
+  padding: 20px 24px;
+  background: rgba(124,92,191,0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(124,92,191,0.15);
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.gap-quote::after {
+  content: '\201C';
+  position: absolute;
+  top: -14px; right: 14px;
+  font-size: 110px;
+  color: rgba(167,139,250,0.07);
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+.gap-quote-bar {
+  width: 3px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #a78bfa, #c9a227);
+  flex-shrink: 0;
+}
+.gap-quote p {
+  margin: 0;
+  font-size: 16px;
+  font-style: italic;
+  color: #3d2f6b;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* ── Image wrap ── */
+.gap-img-wrap {
+  position: relative;
+  border-radius: 28px;
+}
+
+/* corner accents */
+.gap-corner {
+  position: absolute;
+  width: 56px; height: 56px;
+  z-index: 2;
+  pointer-events: none;
+}
+.gap-corner-tl {
+  top: -2px; left: -2px;
+  border-top: 3px solid #a78bfa;
+  border-left: 3px solid #a78bfa;
+  border-radius: 28px 0 0 0;
+}
+.gap-corner-br {
+  bottom: 0px; right: -2px;
+  border-bottom: 3px solid #c9a227;
+  border-right: 3px solid #c9a227;
+  border-radius: 0 0 28px 0;
+}
+
+.gap-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 28px;
+  display: block;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  transition: transform 0.55s ease, box-shadow 0.55s ease;
+}
+.gap-img-wrap:hover .gap-img {
+  transform: scale(1.025) translateY(-5px);
+  box-shadow: 0 48px 100px rgba(0,0,0,0.6);
+}
+
+.gap-img-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 55%;
+  border-radius: 0 0 28px 28px;
+  background: linear-gradient(to top, rgba(13,11,30,0.82) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* ── Stats bar ── */
+.gap-stats {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 24px;
+  z-index: 2;
+}
+.gap-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.gap-stat strong {
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #a78bfa, #c9a227);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+.gap-stat span {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ── Floating badge ── */
+.gap-badge {
+  position: absolute;
+  top: 24px; right: -20px;
+  background: #ffffff;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(124,92,191,0.15);
+  border-radius: 18px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+  animation: floatBadge 3.5s ease-in-out infinite;
+  z-index: 3;
+}
+.gap-badge-icon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(201,162,39,0.2), rgba(201,162,39,0.05));
+  border: 1px solid rgba(201,162,39,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.gap-badge-icon svg {
+  width: 20px; height: 20px;
+}
+.gap-badge strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0d0b1e;
+  line-height: 1.3;
+}
+.gap-badge span {
+  font-size: 12px;
+  color: #7c5cbf;
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}

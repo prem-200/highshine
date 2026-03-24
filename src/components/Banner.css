@@ -1,0 +1,212 @@
+.banner {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ── Background slides ── */
+.banner-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  transform: scale(1.04);
+  animation: none;
+}
+
+.banner-bg.active {
+  opacity: 1;
+  animation: zoomIn 6s ease forwards;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(1.04); }
+  to   { transform: scale(1); }
+}
+
+/* ── Overlay ── */
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(10, 8, 28, 0.93) 0%,
+    rgba(50, 20, 90, 0.78) 55%,
+    rgba(10, 8, 28, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+/* ── Content ── */
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 56px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.banner-content.fade-in {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.banner-content.fade-out {
+  animation: fadeDown 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-14px); }
+}
+
+.banner-tag {
+  display: inline-block;
+  background: linear-gradient(90deg, #5b3fa0, #7c5cbf);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 20px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.banner-title {
+  font-size: 56px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 20px;
+  line-height: 1.12;
+  letter-spacing: -1px;
+}
+
+.banner-title-accent {
+  background: linear-gradient(90deg, #c9a227, #f0c84a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.banner-desc {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 16.5px;
+  line-height: 1.75;
+  max-width: 620px;
+  margin-bottom: 36px;
+}
+
+/* ── CTA Buttons ── */
+.banner-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-primary {
+  padding: 13px 32px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7c5cbf, #5b3fa0);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(124, 92, 191, 0.45);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(124, 92, 191, 0.6);
+}
+
+.btn-outline {
+  padding: 12px 30px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.35);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-outline:hover {
+  border-color: #c9a227;
+  background: rgba(201, 162, 39, 0.1);
+  color: #c9a227;
+}
+
+/* ── Arrows ── */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.carousel-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.carousel-arrow.left  { left: 28px; }
+.carousel-arrow.right { right: 28px; }
+
+.carousel-arrow:hover {
+  background: linear-gradient(135deg, #7c5cbf, #c9a227);
+  border-color: transparent;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ── Dots ── */
+.carousel-dots {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: width 0.3s, background 0.3s;
+  padding: 0;
+}
+
+.dot.active {
+  width: 28px;
+  background: linear-gradient(90deg, #7c5cbf, #c9a227);
+}
